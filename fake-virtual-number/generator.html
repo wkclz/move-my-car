@@ -181,7 +181,7 @@
         </div>
         
         <div class="button-group">
-            <button onclick="generateAll()">一键生成所有</button>
+            <button onclick="generateAll()">一键生成</button>
         </div>
         
         <div class="result" id="result" style="display: none;">
@@ -197,11 +197,27 @@
         </div>
         
         <div class="qrcode-section" id="qrcodeSection" style="display: none;">
-            <h3>扫码二维码</h3>
-            <div class="qrcode-container">
-                <canvas id="qrcode"></canvas>
+            <div style="background-color: white; border-radius: 10px; padding: 30px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); margin-bottom: 20px;">
+                <h3 style="color: #333; margin-bottom: 25px; font-size: 20px; text-align: center;">公主请挪车</h3>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <div style="padding: 20px; background-color: #f9f9f9; border-radius: 8px; margin-bottom: 20px;">
+                        <canvas id="qrcode" style="width: 250px; height: 250px;"></canvas>
+                    </div>
+                    <div style="width: 100%; padding: 20px; background-color: #e8f4f8; border-radius: 8px; text-align: center;">
+                        <p style="color: #333; font-size: 16px; font-weight: bold; line-height: 1.5;">请使用微信/支付宝/浏览器, 或其他带浏览器的工具, 扫码联系车主挪车。</p>
+                    </div>
+                </div>
             </div>
-            <p style="margin-top: 15px; color: #666; font-size: 14px;">请使用此二维码，用于打印和张贴</p>
+            <div style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-radius: 8px; text-align: left;">
+                <h4 style="color: #333; margin-bottom: 15px; font-size: 16px;">使用指南：</h4>
+                <ol style="color: #555; line-height: 1.6; padding-left: 20px;">
+                    <li style="margin-bottom: 10px;"><strong>截图保存</strong>：请截图保存上方的二维码及挪车提示信息，确保完整包含所有内容</li>
+                    <li style="margin-bottom: 10px;"><strong>打印建议</strong>：使用彩色打印，选择高质量打印模式，确保二维码清晰可扫</li>
+                    <li style="margin-bottom: 10px;"><strong>张贴位置</strong>：建议张贴在副驾驶位前方挡风玻璃内侧下方，不干扰驾驶视线，同时又能保证他人可视和方便扫码的位置</li>
+                    <li style="margin-bottom: 10px;"><strong>张贴要求</strong>：选择平整、干净的表面，避免遮挡二维码，确保张贴位置不会被雨水、灰尘等污染</li>
+                    <li><strong>注意事项</strong>：定期检查二维码是否清晰可扫，如有损坏请及时重新打印张贴</li>
+                </ol>
+            </div>
         </div>
         
         <div class="footer">
