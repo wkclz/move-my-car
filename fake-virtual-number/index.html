@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>虚拟号挪车码</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+            margin: 0;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin-bottom: 8px;
+            color: #999;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        
+        .footer p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .footer-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .info {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            text-align: left;
+        }
+        
+        .info p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .feature-list {
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .feature-icon {
+            color: #4CAF50;
+            font-weight: bold;
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        .feature-text {
+            color: #555;
+            line-height: 1.4;
+        }
+        
+        .privacy-number {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+            border: 2px solid #d1e7ed;
+        }
+        
+        .call-button {
+            margin: 25px 0;
+        }
+        
+        .call-button button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .call-button button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        }
+        
+        .call-button button:active {
+            transform: translateY(0);
+        }
+        
+        .usage-guide {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            text-align: left;
+        }
+        
+        .usage-guide h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .usage-guide ol {
+            color: #555;
+            line-height: 1.5;
+            padding-left: 20px;
+            font-size: 13px;
+        }
+        
+        .usage-guide li {
+            margin-bottom: 6px;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            color: #999;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+            
+            .privacy-number {
+                font-size: 16px;
+                padding: 12px;
+            }
+            
+            .call-button button {
+                padding: 12px 25px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>公主请挪车</h1>
+        
+        <div class="info">
+            <p>当您需要联系车主挪车时，可通过以下方式快速联系：</p>
+            <p>系统使用隐私号码技术，保护车主隐私安全，让沟通更放心。</p>
+        </div>
+        
+        <div class="feature-list">
+            <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">隐私保护：使用隐私号码，隐藏真实手机号</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">操作简便：一键拨打，无需记忆号码</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">24小时服务：随时可以联系车主</span>
+            </div>
+        </div>
+        
+        <div class="privacy-number">
+            隐私号码：<span id="phoneNumberDisplay"></span>
+        </div>
+        
+        <div class="call-button">
+            <button onclick="callOwner()">一键呼叫公主</button>
+        </div>
+        
+        <div class="usage-guide">
+            <h3>使用说明</h3>
+            <ol>
+                <li>点击上方"一键呼叫公主"按钮</li>
+                <li>系统将自动跳转到拨号界面</li>
+                <li>确认拨打隐私号码</li>
+                <li>等待车主接听即可沟通挪车事宜</li>
+            </ol>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-title">温馨提示</div>
+            <p>请文明使用此服务，仅用于挪车等必要情况</p>
+            <p>虾米工作室提供技术支持</p>
+        </div>
+    </div>
+    <script>
+        // 模拟的隐私号码
+        const phoneNumber = '13888888888';
+        const url = `tel:${phoneNumber}`;
+        
+        // 页面加载时显示手机号
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('phoneNumberDisplay').textContent = phoneNumber;
+        });
+        
+        // 一键拨打函数
+        function callOwner() {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
