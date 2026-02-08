@@ -247,8 +247,37 @@
         </div>
     </div>
     <script>
-        // 模拟的隐私号码
-        const phoneNumber = '13888888888';
+        // 固定的乱序62进制字符集常量（与generator.html中保持一致）
+        const chars = 'qWERTYuiOPasDFGHjklZXCVBNm0123456789TyghbnMNBVCxzASdfgJKLpoiUYTREWQ';
+        
+        // 从URL中获取seq参数
+        function getSeqFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('seq');
+        }
+        
+        // 将seq值转换为手机号码
+        function seqToPhoneNumber(seq) {
+            if (!seq) return null;
+            
+            let num = 0;
+            for (let i = 0; i < seq.length; i++) {
+                const char = seq[i];
+                const index = chars.indexOf(char);
+                if (index === -1) return null;
+                num = num * 62 + index;
+            }
+            
+            const phoneStr = num.toString();
+            if (phoneStr.length !== 11) return null;
+            
+            return phoneStr;
+        }
+        
+        // 获取手机号码（优先从seq参数转换，否则使用默认号码）
+        const defaultPhoneNumber = '13888888888';
+        const seq = getSeqFromUrl();
+        const phoneNumber = seqToPhoneNumber(seq) || defaultPhoneNumber;
         const url = `tel:${phoneNumber}`;
         
         // 页面加载时显示手机号
