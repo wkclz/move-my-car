@@ -3,23 +3,23 @@
 
 ## 目录说明
 
-### fake-virtual-number
-实现的是一个假的隐私号页面，用于模拟虚拟号挪车码功能。
+### fake-privacy-number
+实现的是一个假的隐私号页面，用于模拟隐私号挪车码功能。
 
 **注意：** 此页面并非真实的隐私号服务，仅用于展示和测试目的。页面中的电话号码为模拟号码，点击拨打按钮不会连接到真实的车主。
 
-## fake-virtual-number 部署和使用说明
+## fake-privacy-number 部署和使用说明
 
 ### 部署方式
 
 1. **本地部署**
    - 将项目克隆到本地
-   - 进入 `fake-virtual-number` 目录
+   - 进入 `fake-privacy-number` 目录
    - 启动本地服务器（如 `python3 -m http.server 8000`）
    - 访问 `http://localhost:8000/generator.html` 开始使用
 
 2. **服务器部署**
-   - 直接部署 `fake-virtual-number` 目录下的所有文件（移除 fake-virtual-number 目录层级）
+   - 直接部署 `fake-privacy-number` 目录下的所有文件（移除 fake-privacy-number 目录层级）
    - 确保服务器支持静态文件访问
    - 通过服务器域名或 IP 直接访问 `generator.html`
    - 请自行解决服务器，域名，SSL 证书问题
