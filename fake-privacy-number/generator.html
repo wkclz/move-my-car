@@ -229,7 +229,7 @@
     
     <script>
         // 固定的乱序62进制字符集常量
-        const chars = 'k7QmN3xL9vRfT1oW8YpDcS5gU2jH4EwX6yZ0qAeIuObVnJrPlGtChaMszBKiF';
+        const chars = '7Hk2vZ9QweRnmpLsjYt4f8xUcGaVI5qOzbNhJ1E3dS6i0XluFrWMKPDTCoyBAg';
         
         // 自定义62进制压缩算法
         function compressPhoneNumber(phone) {
@@ -239,7 +239,6 @@
             // 62进制转换
             let result = '';
             let num = parseInt(cleanPhone);
-            
             while (num > 0) {
                 result = chars[num % 62] + result;
                 num = Math.floor(num / 62);
